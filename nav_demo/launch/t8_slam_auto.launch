@@ -1,0 +1,7 @@
+<!-- 集成slam和导航，机器人自动导航建图 -->
+<launch>
+    <!-- 启动SLAM节点 -->
+    <include file="$(find nav_demo)/launch/t1_slam.launch" />
+    <!-- 运行move_base节点 -->
+    <include file="$(find nav_demo)/launch/t6_movebase.launch" />
+</launch>

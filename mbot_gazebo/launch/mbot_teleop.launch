@@ -1,0 +1,4 @@
+<launch>
+  <node name="mbot_teleop" pkg="mbot_gazebo" type="mbot_teleop.py" output="screen">
+  </node>
+</launch>

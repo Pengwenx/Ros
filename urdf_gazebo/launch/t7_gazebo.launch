@@ -1,0 +1,21 @@
+<launch>
+    <!-- 将 Urdf 文件的内容加载到参数服务器 -->
+    <!-- <param name="robot_description" command="$(find xacro)/xacro $(find urdf_gazebo)/urdf/t7_12346.xacro" /> -->
+    <!-- 启动 gazebo -->
+ 
+    <!-- 加载仿真环境 -->
+    <!-- <include file="$(find gazebo_ros)/launch/empty_world.launch" /> -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find urdf_gazebo)/worlds/neighborhood.world"></arg>
+    </include>
+ 
+    <!-- 在 gazebo 中显示机器人模型 -->
+    <!-- <node pkg="gazebo_ros" type="spawn_model" name="model" args="-urdf -model mycar -param robot_description" /> -->
+    <!-- 加载机器人模型描述参数 -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find mbot_gazebo)/urdf/mbot_base.xacro'" /> 
+
+    <!-- 在gazebo中加载机器人模型-->
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+          args="-urdf -model mbot -param robot_description"/> 
+          
+</launch>

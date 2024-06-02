@@ -1,0 +1,10 @@
+<launch>
+    <!-- 运行rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" />
+    <node pkg="joint_state_publisher" name="joint_state_publisher" type="joint_state_publisher" />
+    <node pkg="robot_state_publisher" name="robot_state_publisher" type="robot_state_publisher" />
+    <!-- 加载地图服务 -->
+    <include file="$(find nav_demo)/launch/t3_map_load.launch" />
+    <!-- 启动AMCL节点 -->
+    <include file="$(find nav_demo)/launch/t4_amcl.launch" />
+</launch>

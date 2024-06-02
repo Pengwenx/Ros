@@ -1,0 +1,8 @@
+<launch>
+
+    <include file="$(find mbot_gazebo)/launch/mbot_gazebo.launch"/>
+
+	<!-- 运行rviz可视化界面 -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find mbot_gazebo)/config/mbot_gazebo.rviz" required="true" />
+
+</launch>

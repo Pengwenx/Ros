@@ -1,0 +1,7 @@
+<!-- 组合惯性矩阵文件、小车、摄像头和雷达 -->
+<robot name="my_car_camera" xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:include filename="t1_head.xacro" />
+    <xacro:include filename="t2_car.xacro" />
+    <xacro:include filename="t3_camera.xacro" />
+    <xacro:include filename="t4_laser.xacro" />
+</robot>
